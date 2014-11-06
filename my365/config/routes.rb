@@ -1,4 +1,18 @@
 My365::Application.routes.draw do
+
+  root 'views#index'
+
+  get 'views/index' => 'views#index', as: :view
+
+  get 'events/index' => 'events#index', as: :event
+
+  get 'events/new' => 'events#new', as: :new
+
+  post 'event/new_event' => 'event#new_event', as: :new_event
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

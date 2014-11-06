@@ -1,0 +1,18 @@
+<h1> here is events/index.html.erb</h1>
+
+<table>
+<thead>
+  <tr>
+   <th>User Name</th>
+   <th>Events</th>
+  </tr>
+</thead>
+<%@events.each do |event| %>
+   <tr>
+   <td><%= event.name %></td>
+   <td><%= event.event %></td>
+   </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Event', new_path %>

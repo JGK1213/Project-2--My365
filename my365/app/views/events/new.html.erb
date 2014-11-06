@@ -1,0 +1,16 @@
+<h1>New Event</h1>
+
+<%= form_for( @event, :url => {:action => :new_event, :controller => :event} ) do |e| %>
+
+	<div class="field">
+		<%= e.label :name %><br>
+		<%= e.text_field :name %> 
+	</div>
+	<div class="field">
+		<%= e.label :event %><br>
+		<%= e.text_area :event %>
+	</div>
+	<div class="actions">
+		<%= e.submit %>
+	</div>
+	<% end %>
