@@ -4,11 +4,37 @@ My365::Application.routes.draw do
 
   get 'views/index' => 'views#index', as: :view
 
-  get 'events/index' => 'events#index', as: :event
+  get 'events/' => 'events#index', as: :events
 
-  get 'events/new' => 'events#new', as: :new
+  get 'events/new' => 'events#new', as: :new_event
 
-  post 'event/new_event' => 'event#new_event', as: :new_event
+  get 'events/:id' => 'events#show', as: :event  
+
+  post 'events/' => 'events#create'
+  
+  get 'events/:id/edit' => 'events#edit', as: :edit_event
+
+  patch 'events/:id' => 'events#update'
+
+  delete 'events/:id' => 'events#destroy'
+
+  
+
+  get 'userprofiles/' => 'userprofiles#index', as: :userprofiles
+
+  get 'userprofiles/new' => 'userprofiles#new', as: :new_userprofile
+
+  get 'userprofiles/:id' => 'userprofiles#show', as: :userprofile
+  
+  post 'userprofiles/' => 'userprofiles#create'
+
+  get 'userprofiles/:id/edit' => 'userprofiles#edit', as: :edit_userprofile
+
+  patch 'userprofiles/:id' => 'userprofiles#update'
+
+  delete 'userprofiles/:id' => 'userprofiles#destroy'
+
+
 
 
 

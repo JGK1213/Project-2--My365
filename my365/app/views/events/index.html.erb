@@ -3,16 +3,25 @@
 <table>
 <thead>
   <tr>
-   <th>User Name</th>
    <th>Events</th>
+   <th>Number</th>
+   
   </tr>
 </thead>
-<%@events.each do |event| %>
+<%@events.each do |e| %>
    <tr>
-   <td><%= event.name %></td>
-   <td><%= event.event %></td>
+   <td><%= e.event %></td>
+   <td><%= e.digit %></td>
+   <td><%= link_to "Delete", event_path(e), method: :delete, data: { confirm: "Are you sure you want to delete #{e.event}?"} %></td>
+
+
+   <td><%= link_to 'Edit', edit_event_path(e) %></td>
    </tr>
 <% end %>
+
 </table>
 
-<%= link_to 'New Event', new_path %>
+
+<br>
+<%= link_to 'View User Profiles', userprofiles_path %><br>
+<%= link_to 'New Event', new_event_path %>
